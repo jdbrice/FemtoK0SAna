@@ -16,7 +16,7 @@ using namespace jdb;
 #include "vendor/loguru.h"
 
 int main( int argc, char* argv[] ) {
-	loguru::add_file("everything.log", loguru::Truncate, loguru::Verbosity_MAX);
+	// loguru::add_file("everything.log", loguru::Truncate, loguru::Verbosity_MAX);
 
 
 	TaskFactory::registerTaskRunner<FemtoK0SAna>( "FemtoK0SAna" );

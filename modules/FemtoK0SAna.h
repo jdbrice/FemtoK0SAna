@@ -87,7 +87,7 @@ protected:
 				if ( nullptr != neg->m )
 					nMTD++;
 				if ( nMTD < 1 ) continue;
-				  
+
 				pair<double, double> pathLengths = pos->helix.pathLengths( neg->helix );
 				StThreeVectorD pNegPosAtDca = pos->helix.at(pathLengths.first);
 				StThreeVectorD pPosPosAtDca = neg->helix.at(pathLengths.second);
@@ -109,14 +109,12 @@ protected:
 				lvn.SetPtEtaPhiM( pPosMomAtDca.perp(), pPosMomAtDca.pseudoRapidity(), pPosMomAtDca.phi(), MASS_PI );
 				lv = lvp+lvn;
 
-				double pointingAngle = K0sMomAtDCA.angle(decLenVec);
-				book->fill( "pointingAngle", pointingAngle );
-
 				double K0pT = lv.Pt();
-				if (TMath::Abs(pointingAngle) > 0.106+0.056-0.1123*K0pT+0.025*K0pT*K0pT) continue;
-				
+				double pointingAngle = K0sMomAtDCA.angle(decLenVec);
+				book->fill( "pointingAngle", K0pT, pointingAngle );
 
 				
+				if (TMath::Abs(pointingAngle) > 0.106+0.056-0.1123*K0pT+0.025*K0pT*K0pT) continue;
 
 				if ( 0 == nMTD  )
 					book->fill( "pt_mass", lv.M(), lv.Pt() );

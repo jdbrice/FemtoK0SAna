@@ -18,12 +18,12 @@
             <Histo name="pt_mass_bmtd" bins_x="mass" bins_y="pt" />
             <Histo name="decayLength" title="Decay Length" bins_x="decayLen"/>
             <Histo name="dcaVec" title="Mutual DCA" bins_x="decayLen"/>
-            <Histo name="pointingAngle" title="" bins_x="pointingAngle" />
+            <Histo name="pointingAngle" title="" bins_x="pt" bins_y="pointingAngle" />
 		</histograms>
 
 	</FKS>
 
-    <pointingAngle width="0.01" min="-3.2" max="3.2" />
+    <pointingAngle width="0.01" min="0" max="3.2" />
     <mass width="0.010" min="0" max="3" />
     <pt width="0.010" min="0" max="15" />
     <decayLen width="0.01" min="0" max="50"/>
