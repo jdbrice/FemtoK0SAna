@@ -1,0 +1,7 @@
+.sconsign.dblite
+.vscode
+*.o
+*.lis
+*.root
+*.log
+*.app
